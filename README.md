@@ -58,7 +58,7 @@ The above example is for COG database. For NOG database, you can find it from he
 http://eggnogdb.embl.de/download/eggnog_4.1/
 ```
 
-Note that eggNOG database contain NOG database so we can use eggNOG insdead of finding NOG database.
+Note that eggNOG database contains NOG database.
 
 And then we should modify the SConstruct file to specify the exact format of our input data:
 ```bash
