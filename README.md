@@ -126,6 +126,8 @@ Go to http://huttenhower.sph.harvard.edu/galaxy/
 
 Click the "GraPhlAn" link on the left and follow the instructions
 
+
+
 MaAsLin:
 
 MaAsLin is a multivariate statistical framework that finds associations between clinical metadata and potentially high-dimensional experimental data. 
@@ -138,6 +140,9 @@ Modifications:
 ```
 
 Tutorial of MaAsLin: https://bitbucket.org/biobakery/biobakery/wiki/maaslin
+
+
+
 
 LEfSe:
 
