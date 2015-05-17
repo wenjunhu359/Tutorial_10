@@ -36,6 +36,35 @@ https://bitbucket.org/biobakery/biobakery/wiki/humann
 
 Place (or symlink) each file with a .txt, .txt.gz, .txt.bz, .bam, .csv, .tsv, or .pcl extension as appropriate in the "input" directory before running HUMAnN. The pipeline includes processors for three tab-delimited text formats by default (below) and BAM binary format and can easily by modified to accept more.
 
+Example blast command:
+```bash 
+blastx -outfmt 6 -db 28_kegg_genomes < mock_even_lc.fasta.gz | gzip -c > mock_even_lc.txt.gz
+```
+Now kegg has gone commercial, we can use COG, NOG database insdead. Replace 28_kegg_genomes by your own database.
+
+You can build your COG, NOG database by:
+
+```bash 
+wget ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/prot2003-2014.fa.gz
+
+gzip -d prot2003-2014.fa.gz
+
+makeblastdb -in *.fa -dbtype prot -out COG -parse_seqids
+```
+
+The above example is for COG database. For NOG database, you can find more detail from here
+```bash 
+http://eggnogdb.embl.de/download/eggnog_4.1/
+```
+
+Note that eggNOG data base contain NOG database so we can use eggNOG insdead of NOG.
+
+
+
+
+
+
+
 
 
 
