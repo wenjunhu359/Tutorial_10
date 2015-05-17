@@ -96,7 +96,7 @@ Note that the newest version of HuManN use both KEGG and Metacyc as default. Aft
 
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
-#Step 4: Cd to the humann-0.99 folder, run ./$ scons
+#Step 4: Cd to the humann-0.99 folder, run "scons" (Use ./$scons in bash)
 
 #Step 5: Check the output
 
