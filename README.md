@@ -52,7 +52,7 @@ Using this fasta data, we should get our blastx result.
 
 Example blastx command:
 ```bash 
-blastx -outfmt 6 -db 28_kegg_genomes SRR492190.fasta SRR492190.txt
+blastx -outfmt 6 -db 28_kegg_genomes -query SRR492190.fasta -out SRR492190.txt
 ```
 Now kegg has gone commercial, we can use COG, NOG database insdead. Replace 28_kegg_genomes by your own database.
 
@@ -63,8 +63,16 @@ wget ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/prot2003-2014.fa.gz
 
 gzip -d prot2003-2014.fa.gz
 
-makeblastdb -in *.fa -dbtype prot -out COG -parse_seqids
+makeblastdb -in *.fa -dbtype prot -out COG 
 ```
+
+You will get a log with a lot of 
+```bash
+Error: (1431.1) FASTA-Reader: Warning: FASTA-Reader: Ignoring FASTA modifier(s) found because the input was not expected to have any.
+```
+Don't worry, it's a bug appears in the ncbi-blast/2.2.29. It is fixed in the newer version
+
+Related blog: http://blastedbio.blogspot.com/2014/04/error-1431-fasta-reader-ignoring-modifiers.html
 
 The above example is for COG database. For NOG database, you can find it from here
 ```bash 
