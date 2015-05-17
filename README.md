@@ -18,7 +18,7 @@ https://bitbucket.org/biobakery/biobakery/wiki/humann
 
 1.A network connection. At least for the first run.
 
-2.A bunch of RAM. At least 8-10GB
+2.A bunch of RAM. At most 8-10GB. Could use more
 
 3.Python >= 2.7
 
