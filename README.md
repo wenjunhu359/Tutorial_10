@@ -92,7 +92,9 @@ The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.
 3.A file of gene-to-OG mappings (for KEGG, data/koc).
 4.A file of OG-to-pathway mappings (for KEGG, data/keggc).
 ```
-Note that the newest version of HuManN use both KEGG and Metacyc as default. After we use COG or eggNOG to blast, the HuManN would check both.
+Note that the newest version of HuManN use both KEGG and Metacyc as default. After we use COG or eggNOG to blast, the HuManN would check both. We don't have to modified the code if you willing to use KEGG and MetaCyc.
+
+There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
 #Step 4: Cd to the humann-0.99 folder, run ./$ scons
 
