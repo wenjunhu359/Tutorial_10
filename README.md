@@ -36,9 +36,23 @@ One or more of the following:
 
 Place (or symlink) each file with a .txt, .txt.gz, .txt.bz, .bam, .csv, .tsv, or .pcl extension as appropriate in the "input" directory before running HUMAnN. The pipeline includes processors for three tab-delimited text formats by default (below) and BAM binary format and can easily by modified to accept more.
 
-Example blast command:
+Get our example sra data and translate it to fasta
 ```bash 
-blastx -outfmt 6 -db 28_kegg_genomes < mock_even_lc.fasta.gz | gzip -c > mock_even_lc.txt.gz
+mkdir data
+cd data
+wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.0/sratoolkit.2.5.0-ubuntu64.tar.gz 
+tar zxvf sratoolkit.2.5.0-ubuntu64.tar.gz
+cd sratoolkit.2.5.0-ubuntu64/bin
+wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX144/SRX144807/SRR492190/SRR492190.sra
+fastq-dump --fasta SRR492190.sra
+```
+Then we can get SRR492190.fasta
+
+Using this fasta data, we should get our blastx result.
+
+Example blastx command:
+```bash 
+blastx -outfmt 6 -db 28_kegg_genomes SRR492190.fasta SRR492190.txt
 ```
 Now kegg has gone commercial, we can use COG, NOG database insdead. Replace 28_kegg_genomes by your own database.
 
@@ -51,7 +65,6 @@ gzip -d prot2003-2014.fa.gz
 
 makeblastdb -in *.fa -dbtype prot -out COG -parse_seqids
 ```
-(blast module is needed)
 
 The above example is for COG database. For NOG database, you can find it from here
 ```bash 
@@ -60,7 +73,7 @@ http://eggnogdb.embl.de/download/eggnog_4.1/
 
 Note that eggNOG database contains NOG database.
 
-And then we should modify the SConstruct file to specify the exact format of our input data:
+And then we should modify the SConstruct file to specify the exact format of our input data(if we use other blast method):
 ```bash
 blastx -outfmt 6
 ----------------
@@ -92,7 +105,7 @@ The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.
 3.A file of gene-to-OG mappings (for KEGG, data/koc).
 4.A file of OG-to-pathway mappings (for KEGG, data/keggc).
 ```
-Note that the newest version of HuManN use both KEGG and Metacyc as default. After we use COG or eggNOG to blast, the HuManN would check both. We don't have to modified the code if you willing to use KEGG and MetaCyc.
+Note that the newest version of HuManN use both KEGG and Metacyc as default. After we blast COG or eggNOG, the HuManN would check both KEGG and MetaCyc. We don't have to modified the code if you willing to use both of them.
 
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
