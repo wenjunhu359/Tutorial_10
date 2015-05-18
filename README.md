@@ -129,19 +129,27 @@ The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.
 
 4.A file of OG-to-pathway mappings (for KEGG, data/keggc).
 
-Note that the newest version of HuManN use both KEGG and MetaCyc as default. But if you want to use MetaCyc, you have to download the meta.tar.gz from BioCyc yourself. It is very simple. Go to BioCyc, following the instructions, and then you will get an e-mail include the sever name, password and license. 
+Note that the newest version of HuManN use KEGG as default. If you want to use MetaCyc, you have to download the meta.tar.gz from BioCyc yourself. It is very simple. Go to BioCyc, following the instructions, and then you will get an e-mail include the sever name, password and license. 
 
 After you download the meta.tar.gz, you should upload it to the Proteus and put in the input folder of HuManN.
 
 I have a copy of meta.tar.gz on the sever 
 
 If you want to use it run this
-
 ```bash
 cp /mnt/HA/groups/nsftuesGrp/data/tutorial10/meta.tar.gz ./humann-0.99/input
 ```
-
-Now HuManN would detected meta.tar.gz. So both KEGG and MetaCyc will be used. We don't have to modified the code .
+And you have to open Sconstruct and find.
+```bash
+c_strInputMetaCyc					= "" # c_strDirInput + "/meta.tar.gz"
+c_strVersionMetaCyc					= "14.6"
+```
+Modify them into
+```bash
+c_strInputMetaCyc					= c_strDirInput + "/meta.tar.gz"
+c_strVersionMetaCyc					= "19.0"
+```
+Now HuManN would detected meta.tar.gz. So both KEGG and MetaCyc will be used.
 
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
