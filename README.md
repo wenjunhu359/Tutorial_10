@@ -14,7 +14,7 @@ https://bitbucket.org/biobakery/biobakery/wiki/humann
 
 3.Run the "scons" command, optionally parallelizing multiple analyses using the "-j" flag. Results will be placed in the "output" directory.
 
-#Step 1: PREREQUISITES  
+#Step 1: PREREQUISITES 
 
 1.A network connection. At least for the first run.
 
@@ -23,6 +23,14 @@ https://bitbucket.org/biobakery/biobakery/wiki/humann
 3.Python >= 2.7
 
 4."-outfmt 6" blastx result. Alternatively, input processors are also provided for accelerated BLAST implementations such as mapx, mblastx, or usearch.
+
+Proteus Procedure
+```bash
+## Obtain HuManN
+wget https://bitbucket.org/biobakery/humann/downloads/humann-v0.99.tar.gz
+tar zxvf humann-v0.99.tar.gz
+rm humann-v0.99.tar.gz
+```
 
 #Step 2: Put your inputs into the input folder /humann-0.99/input, edit the SConstruct.
 
@@ -54,7 +62,7 @@ Example blastx command:
 ```bash 
 blastx -outfmt 6 -db 28_kegg_genomes -query SRR492190.fasta -out SRR492190.txt
 ```
-Now kegg has gone commercial, we can use COG, NOG database insdead. Replace 28_kegg_genomes by your own database.
+Now kegg has gone commercial, we can use COG, NOG database insdead. Replace "28_kegg_genomes" by your own database.
 
 You can build your COG, NOG database by:
 
@@ -81,7 +89,7 @@ http://eggnogdb.embl.de/download/eggnog_4.1/
 
 Note that eggNOG database contains NOG database.
 
-And then we should modify the SConstruct file to specify the exact format of our input data(if we use other blast method):
+And then, if we want to use special format, we should modify the SConstruct file to specify the exact format of our input data (There is no need to change if you use the right format):
 ```bash
 blastx -outfmt 6
 ----------------
@@ -103,6 +111,11 @@ usearch
 -------
 usearch can be treated identically to "blastx -outfmt 6" if the "--blast6out" flag is provided.
 ```
+Proteus Procedure
+```bash
+nano humann.sh
+cp /mnt/HA/groups/nsftuesGrp/data/tutorial10/SRR492190.txt ./humann-0.99/input
+```
 
 #Step 3: Using alternatives to KEGG (optional)
 
@@ -116,11 +129,29 @@ The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.
 
 4.A file of OG-to-pathway mappings (for KEGG, data/keggc).
 
-Note that the newest version of HuManN use both KEGG and Metacyc as default. After we blast COG or eggNOG, the HuManN would check both KEGG and MetaCyc. We don't have to modified the code if you willing to use both of them.
+Note that the newest version of HuManN use both KEGG and MetaCyc as default. But if you want to use MetaCyc, you have to download the meta.tar.gz from BioCyc yourself. It is very simple. Go to BioCyc, following the instructions, and then you will get an e-mail include the sever name, password and license. 
+
+After you download the meta.tar.gz, you should upload it to the Proteus and put in the input folder of HuManN.
+
+I have a copy of meta.tar.gz on the sever 
+
+If you want to use it run this
+
+```bash
+cp /mnt/HA/groups/nsftuesGrp/data/tutorial10/meta.tar.gz ./humann-0.99/input
+```
+
+Now HuManN would detected meta.tar.gz. So both KEGG and MetaCyc will be used. We don't have to modified the code .
 
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
 #Step 4: Cd to the humann-0.99 folder, run "scons" 
+
+Proteus Procedure
+```bash
+newgrp nsftuesGrp
+qsub humann.sh
+```
 
 #Step 5: Sit and relax. Wait for the output.
 
@@ -148,7 +179,7 @@ For more detail of output, goto: https://bitbucket.org/biobakery/humann
 
 Search "By default, the following output file types are produced"
 
-#Step 6 Further analysis
+#Step 6 Further analysis (optional)
 
 GraPhlAn:
 
