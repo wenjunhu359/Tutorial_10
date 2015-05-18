@@ -199,6 +199,8 @@ Search "By default, the following output file types are produced"
 
 #Step 6 Further analysis (optional)
 
+Example output for this part: https://www.dropbox.com/s/281esvgtjdsc92p/example_output.zip?dl=0
+
 GraPhlAn:
 
 The following HUMAnN output files may be used as inputs for visualization with GraPhlAn:
