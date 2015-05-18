@@ -121,9 +121,9 @@ cp /mnt/HA/groups/nsftuesGrp/data/tutorial10/SRR492190.txt ./humann-0.99/input
 
 The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.) requires:
 
-1.A FASTA file of nucleotide sequences against which the meta'ome is searched, each labeled with a gene ID (for KEGG, the genes.pep file distributed with KEGG).
+1.A FASTA file of nucleotide sequences against which the meta'ome is searched, each labeled with a gene ID (for KEGG, the genes.pep file distributed with KEGG). "ftp://ftp.ncbi.nih.gov/pub/COG/COG/myva"
 
-2.A file of nucleotide sequence lengths, each labeled with a gene ID (for KEGG, data/genels).
+2.A file of nucleotide sequence lengths, each labeled with a gene ID (for KEGG, data/genels). "download ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/cog2003-2014.csv and modify it too meet the needs"
 
 3.A file of gene-to-OG mappings (for KEGG, data/koc).
 
