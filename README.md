@@ -50,7 +50,7 @@ mkdir data
 cd data
 wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.0/sratoolkit.2.5.0-ubuntu64.tar.gz 
 tar zxvf sratoolkit.2.5.0-ubuntu64.tar.gz
-cd sratoolkit.2.5.0-ubuntu64/bin
+cd sratoolkit.2.5.0-ubuntu64
 wget ftp://ftp.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX144/SRX144807/SRR492190/SRR492190.sra
 fastq-dump --fasta SRR492190.sra
 ```
