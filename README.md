@@ -197,7 +197,20 @@ For more detail of output, goto: https://bitbucket.org/biobakery/humann
 
 Search "By default, the following output file types are produced"
 
-#Step 6 Further analysis (optional)
+#Step 6 Output evalutatioin
+
+When we first opened our results and found that it is almost empty, we think maybe we have done something wrong. We tried to use different blast data base to blast, use both KEGG and MetaCyc as pathway, use different infant_gut data. But still, the output file is almost empty. After analyzed the example input data and our input data. We found that the problem is our input data's sseqid has no pattern at all. We come up with that the problem may be the metadata it self. We only blast 1% of the data and this segment of data doesn't hit the pathway so we got nothing for the 01 file. The 02 03 04 and 99 files are generated from the 01 data, so if we get nothing from 01 file, we can not get anything at all.
+The biggest problem of using HuMannN isn't HuMannN itself, it's the blast part. It takes crazy amount of time to blast our data. We only processed 1% of a 360Mb data and it cost us more then 6 hours. So it take us a long time to do our experiment.
+
+Advice for anyone who want to include HuManN for their final project:
+
+1. Start blast your result early (Can use other fast blast algorithm).
+2. Use mulitiple blast database to blast (KEGG is the best but you have to pay $2000 to it for a year). This will increase the hit rate.
+3. It's pretty easy to modify the code (Take a look in the SConstruct), HuManN is pretty good to adjust new pathway.
+
+
+
+#Step 7 Further analysis (optional)
 
 Example output for this part: https://www.dropbox.com/s/281esvgtjdsc92p/example_output.zip?dl=0
 
