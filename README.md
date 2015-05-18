@@ -201,19 +201,19 @@ Search "By default, the following output file types are produced"
 
 Example output for this part: https://www.dropbox.com/s/281esvgtjdsc92p/example_output.zip?dl=0
 
-GraPhlAn:
+GraPhlAn: http://huttenhower.sph.harvard.edu/galaxy/
 
 The following HUMAnN output files may be used as inputs for visualization with GraPhlAn:
 04b-*-(mpm or mpt)-*-graphlan_rings.txt (Annotation file)
 04b-*-(mpm or mpt)-*-graphlan_tree.txt (Tree)
 
-Go to http://huttenhower.sph.harvard.edu/galaxy/
+Go to 
 
 Click the "GraPhlAn" link on the left and follow the instructions
 
 
 
-MaAsLin:
+MaAsLin: http://huttenhower.sph.harvard.edu/galaxy/
 
 MaAsLin is a multivariate statistical framework that finds associations between clinical metadata and potentially high-dimensional experimental data. 
 
@@ -229,7 +229,7 @@ Tutorial of MaAsLin: https://bitbucket.org/biobakery/biobakery/wiki/maaslin
 
 
 
-LEfSe:
+LEfSe: http://huttenhower.sph.harvard.edu/galaxy/
 
 LDA Effect Size is an algorithm for high-dimensional biomarker discovery and explanation that identifies genomic features (genes, pathways, or taxa) characterizing the differences between two or more biological conditions (or classes).
 
@@ -242,7 +242,6 @@ Modifications:
 5.Please ensure only 1-2 metadata rows remain apart from the Name/ID row at the top.
 ```
 
-Go to http://huttenhower.sph.harvard.edu/galaxy/
 
 Click the "LEfSe" link on the left and follow the instructions
 
