@@ -78,7 +78,7 @@ You will get a log with a lot of
 ```bash
 Error: (1431.1) FASTA-Reader: Warning: FASTA-Reader: Ignoring FASTA modifier(s) found because the input was not expected to have any.
 ```
-Don't worry, it's a bug appears in the ncbi-blast/2.2.29. It is fixed in the newer version
+Don't worry, it's a bug appears in the ncbi-blast/2.2.29. It's harmless because it won't affect our blast result. It is fixed in the newer version.
 
 Related blog: http://blastedbio.blogspot.com/2014/04/error-1431-fasta-reader-ignoring-modifiers.html
 
