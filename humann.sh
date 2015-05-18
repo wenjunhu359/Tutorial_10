@@ -16,6 +16,6 @@ module load sge/univa
 module load gcc/4.8.1
 module load qiime
 
-path=/home/wh359/Tutorial_10/humann-0.99
+path=/home/wh359/humann-0.99
 cd ${path}
 scons
