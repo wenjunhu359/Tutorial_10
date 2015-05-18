@@ -151,6 +151,16 @@ c_strVersionMetaCyc					= "19.0"
 ```
 Now HuManN would detected meta.tar.gz. So both KEGG and MetaCyc will be used.
 
+If you don't like KEGG, find this line (must include other pathway)
+
+```bash
+c_strInputMetadata					= c_strDirInput + "/hmp_metadata.dat"
+```
+Modify it into
+```bash
+c_strInputMetadata					= "" #c_strDirInput + "/hmp_metadata.dat"
+```
+
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
 #Step 4: Cd to the humann-0.99 folder, run "scons" 
