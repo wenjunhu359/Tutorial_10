@@ -121,9 +121,9 @@ cp /mnt/HA/groups/nsftuesGrp/data/tutorial10/SRR492190.txt ./humann-0.99/input
 
 The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.) requires:
 
-1.A FASTA file of nucleotide sequences against which the meta'ome is searched, each labeled with a gene ID (for KEGG, the genes.pep file distributed with KEGG). "ftp://ftp.ncbi.nih.gov/pub/COG/COG/myva"
+1.A FASTA file of nucleotide sequences against which the meta'ome is searched, each labeled with a gene ID (for KEGG, the genes.pep file distributed with KEGG). "COG ftp://ftp.ncbi.nih.gov/pub/COG/COG/myva"
 
-2.A file of nucleotide sequence lengths, each labeled with a gene ID (for KEGG, data/genels). "download ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/cog2003-2014.csv and modify it too meet the needs"
+2.A file of nucleotide sequence lengths, each labeled with a gene ID (for KEGG, data/genels). "COG download ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/cog2003-2014.csv and modify it too meet the needs"
 
 3.A file of gene-to-OG mappings (for KEGG, data/koc).
 
@@ -206,7 +206,7 @@ Advice for anyone who want to include HuManN for their final project:
 
 1. Start blast your result early (Can use other fast blast algorithm).
 2. Choose apropreate data set to blast.
-3. Use mulitiple blast database to blast (KEGG is the best but you have to pay $2000 to it for a year. You can use COG, eggNOG, human microbiome project (HMP), etc. ). This will increase the hit rate.
+3. Use mulitiple blast database to blast (KEGG is the best but you have to pay $2000 to it for a year. You can use COG, eggNOG, human microbiome project (HMP), etc. ). This will increase the hit rate. If you really want to get a good result, pay $2000 or use the last publicated KEGG database(not recommended)  D:
 4. Don't be scared, their code is written nicely. It's pretty easy to modify the code (Take a look in the SConstruct), HuManN is pretty good to be adjusted and modified.
 
 
