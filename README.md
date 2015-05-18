@@ -107,34 +107,47 @@ usearch can be treated identically to "blastx -outfmt 6" if the "--blast6out" fl
 #Step 3: Using alternatives to KEGG (optional)
 
 The process of using HUMAnN with a database other than KEGG (e.g. COG, NOG, etc.) requires:
-```bash
+
 1.A FASTA file of nucleotide sequences against which the meta'ome is searched, each labeled with a gene ID (for KEGG, the genes.pep file distributed with KEGG).
+
 2.A file of nucleotide sequence lengths, each labeled with a gene ID (for KEGG, data/genels).
+
 3.A file of gene-to-OG mappings (for KEGG, data/koc).
+
 4.A file of OG-to-pathway mappings (for KEGG, data/keggc).
-```
+
 Note that the newest version of HuManN use both KEGG and Metacyc as default. After we blast COG or eggNOG, the HuManN would check both KEGG and MetaCyc. We don't have to modified the code if you willing to use both of them.
 
 There is no clue that which one is better. The KEGG vs. MetaCyc will be presented in the latter sildes.
 
-#Step 4: Cd to the humann-0.99 folder, run "scons" (Use ./$scons in bash)
+#Step 4: Cd to the humann-0.99 folder, run "scons" 
 
-#Step 5: Check the output
+#Step 5: Sit and relax. Wait for the output.
 
-Three or more files per input including:
-```bash
-The relative abundances of each gene in the input metagenome. By default tagged as type "01". Two columns of tab-delimited text: geneid abundance.
-The coverages of each pathway, expressed as a fraction between 0 and 1 inclusive. By default tagged as type "04a". Two columns of tab-delimited text: pathid coverage.
-The relative abundances of each pathway. By default tagged as type "04b". Two columns of tab-delimited text: pathid abundance.
-Optionally, a table of individual gene abundances appropriate for loading into METAREP. By default tagged as type "99". Five columns of tab-delimited text: geneid abundance e-score %identical identical. The abundance is relative and calculated as in HUMAnN's gene family abundances; e-score, percent identity, and identity length are averaged over all reads mapping to each gene in the input translated BLAST results.
-```
+Three or more output files per input including:
+
+1.The relative abundances of each gene in the input metagenome. By default tagged as type "01". Two columns of tab-delimited text: geneid abundance.
+
+2.The coverages of each pathway, expressed as a fraction between 0 and 1 inclusive. By default tagged as type "04a". Two columns of tab-delimited text: pathid coverage.
+
+3.The relative abundances of each pathway. By default tagged as type "04b". Two columns of tab-delimited text: pathid abundance.
+
+4.Optionally, a table of individual gene abundances appropriate for loading into METAREP. By default tagged as type "99". Five columns of tab-delimited text: geneid abundance e-score %identical identical. The abundance is relative and calculated as in HUMAnN's gene family abundances; e-score, percent identity, and identity length are averaged over all reads mapping to each gene in the input translated BLAST results.
+
 Three or more merged files are also produced, all tab-delimited text:
-```bash
-A table containing the relative abundances of all genes in any input metagenomes. By default named as "01-*.txt".
-A table containing the coverages of all pathways in any input files. By default named as "04a-*.txt".
-A table containing the relative abundances of all pathways in any input files. By default named as "04b-*.txt".
-A table containing the relative abundances of all individual genes in any input files. By default named as "99-*.txt".
-```
+
+1.A table containing the relative abundances of all genes in any input metagenomes. By default named as "01-*.txt".
+
+2.A table containing the coverages of all pathways in any input files. By default named as "04a-*.txt".
+
+3.A table containing the relative abundances of all pathways in any input files. By default named as "04b-*.txt".
+
+4.A table containing the relative abundances of all individual genes in any input files. By default named as "99-*.txt".
+
+For more detail of output, goto: https://bitbucket.org/biobakery/humann  
+
+Search "By default, the following output file types are produced"
+
 #Step 6 Further analysis
 
 GraPhlAn:
